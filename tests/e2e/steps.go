@@ -5,6 +5,54 @@ type Step struct {
 	state  State
 }
 
+func generateSimpleTestSteps() []Step {
+	startChainStep := []Step{
+		{
+			action: StartChainAction{
+				chain: chainID("provi"),
+				validators: []StartChainValidator{
+					{id: validatorID("bob"), stake: 500000000, allocation: 10000000000},
+					{id: validatorID("alice"), stake: 500000000, allocation: 10000000000},
+				},
+			},
+			state: State{
+				chainID("provi"): ChainState{
+					ValBalances: &map[validatorID]uint{
+						validatorID("alice"): 9500000000,
+						validatorID("bob"):   9500000000,
+					},
+				},
+			},
+		},
+	}
+
+	sendTokenSteps := []Step{}
+	for i := 1; i < 100; i++ {
+		diff := uint(i * 100)
+		sendTokenSteps = append(sendTokenSteps,
+			Step{
+				action: SendTokensAction{
+					chain:  chainID("provi"),
+					from:   validatorID("alice"),
+					to:     validatorID("bob"),
+					amount: 100,
+				},
+				state: State{
+					chainID("provi"): ChainState{
+						ValBalances: &map[validatorID]uint{
+							validatorID("alice"): 9500000000 - diff,
+							validatorID("bob"):   9500000000 + diff,
+						},
+					},
+				},
+			})
+	}
+
+	return concatSteps(startChainStep, sendTokenSteps)
+}
+
+var simpleTestSteps = generateSimpleTestSteps()
+
 func concatSteps(steps ...[]Step) []Step {
 	var concat []Step
 	for _, s := range steps {
