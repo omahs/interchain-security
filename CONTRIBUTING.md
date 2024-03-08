@@ -74,7 +74,7 @@ but _maintaining_ that change over the years has a much higher cost that the ste
 
 To ensure a smooth workflow for all contributors, a general workflow for contributing has been established. 
 
-1. Start by browsing [existing issues](https://github.com/cosmos/interchain-security/issues) and [discussions](https://github.com/cosmos/interchain-security/discussions). If you are looking for something interesting or if you have something in your mind, there is a chance it had been discussed.
+1. Start by browsing [existing issues](https://github.com/cosmos/interchain-security/issues) and [discussions](https://github.com/cosmos/interchain-security/discussions). If you are looking for something interesting or if you have something in your mind, there is a chance it has been discussed.
    * Looking for a good place to start contributing? How about checking out some [good first issues](https://github.com/cosmos/interchain-security/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22) or [bugs](https://github.com/cosmos/interchain-security/issues?q=is%3Aopen+is%3Aissue+label%3Abug)?
 2. Determine whether a GitHub issue or discussion is more appropriate for your needs:
    1. If you want to propose something new that requires specification or an additional design, or you would like to change a process, start with a [new discussion](https://github.com/cosmos/interchain-security/discussions/new/choose). With discussions, we can better handle the design process using discussion threads. A discussion usually leads to one or more issues.
@@ -85,7 +85,7 @@ To ensure a smooth workflow for all contributors, a general workflow for contrib
    1. Ensure that the proposal has been accepted.
    2. Ensure that nobody else has already begun working on this issue. If they have,
       make sure to contact them to collaborate.
-   3. If nobody has been assigned for the issue and you would like to work on it,
+   3. If nobody has been assigned to the issue and you would like to work on it,
       make a comment on the issue to inform the community of your intentions
       to begin work and please wait for an acknowledgement from the stewarding team.
 5. To submit your work as a contribution to the repository, follow standard GitHub best practices. 
@@ -179,7 +179,7 @@ Additionally, **each PR should only address a single issue**.
 
 ### Pull Request Templates
 
-There are three PR templates. The [default template](./.github/PULL_REQUEST_TEMPLATE.md) contains links to the three templates. Please go the the `Preview` tab and select the appropriate sub-template:
+There are three PR templates. The [default template](./.github/PULL_REQUEST_TEMPLATE.md) contains links to the three templates. Please go to the `Preview` tab and select the appropriate sub-template:
 
 - The [production template](./.github/PULL_REQUEST_TEMPLATE/production.md) is for types `fix`, `feat`, and `refactor`. 
 - The [docs template](./.github/PULL_REQUEST_TEMPLATE/docs.md) is for documentation changes.
